@@ -7,7 +7,6 @@ class UserInput(BaseModel):
     dewpoint: Annotated[float, Field(gt=-50, lt=30, description="Dewpoint temperature in Celsius")]
     humidity: Annotated[float, Field(gt=0, lt=100, description="Relative humidity in percentage")]
     cloud: Annotated[float, Field(gt=0, lt=100, description="Cloud cover in percentage")]
-    sunshine: Annotated[float, Field(gt=0, lt=24, description="Sunshine duration in hours")]
-    wind_direction: Annotated[Literal['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'], Field(description="Wind direction as compass points")]
-    wind_speed: Annotated[float, Field(gt=0, lt=150, description="Wind speed in km/h")]
-    
+    sunshine: Annotated[float, Field(ge=0, le=24, description="Sunshine duration in hours")]
+    winddirection: Annotated[float, Field(gt=1, lt = 360, description="Wind direction as compass points")]
+    windspeed: Annotated[float, Field(gt=0, lt=150, description="Wind speed in km/h")]

@@ -9,11 +9,11 @@ app = FastAPI()
 
 @app.get('/')
 def home():
-    return JSONResponse(content={"message": "Welcome to the Rainfall Prediction API"})
+    return {"message": "Welcome to the Rainfall Prediction API"}
 
 @app.get("/health")
 def health_check():
-    return JSONResponse(content={"status": "ok",'version': version,'model_loaded': model is not None})
+    return {"status": "ok",'version': version,'model_loaded': model is not None}
     
 
 
@@ -25,8 +25,8 @@ def predict_rainfall(data : UserInput):
         "humidity": data.humidity,
         "cloud": data.cloud,
         "sunshine": data.sunshine,
-        "wind_direction": data.wind_direction,
-        "wind_speed": data.wind_speed
+        "winddirection": data.winddirection,
+        "windspeed": data.windspeed
     }
 
     try:
