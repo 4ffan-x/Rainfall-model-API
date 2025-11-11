@@ -2,9 +2,12 @@ import pickle
 import pandas as pd
 import sklearn
 
-with open('Model/autism_prediction.sav', 'rb') as file:
-    model = pickle.load(file)
+with open('Model/rainfall_trained_model.pkl', 'rb') as file:
+    model_data = pickle.load(file)
 
+model = model_data["model"]
+feature_name = model_data["feature_name"]
+     
 version = '1.0.0'
 
 class_labels = model.classes_.tolist()

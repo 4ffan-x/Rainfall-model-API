@@ -5,7 +5,7 @@ class PredictionResponse(BaseModel):
     predicted_category: str = Field(
         ...,
         description="The predicted insurance premium category",
-        example="High"
+        example="Rainfall"
     )
     confidence: float = Field(
         ...,
